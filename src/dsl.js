@@ -1,2 +1,0 @@
-var total=sale.preDiscountTotal;
-

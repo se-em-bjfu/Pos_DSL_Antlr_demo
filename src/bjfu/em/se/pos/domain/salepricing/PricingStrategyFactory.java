@@ -8,7 +8,7 @@ import javax.script.ScriptContext;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
-import bjfu.em.se.pos.domain.salepricing.dsl.JavascriptDSLPricingStrategy;
+import bjfu.em.se.pos.domain.salepricing.dsl.RuleBasedSalePricingStrategy;
 
 /**
  * 打折策略工厂类
@@ -19,12 +19,9 @@ import bjfu.em.se.pos.domain.salepricing.dsl.JavascriptDSLPricingStrategy;
 public final class PricingStrategyFactory {
 	private static PricingStrategyFactory instance=new PricingStrategyFactory();
 	
-	private final ScriptEngineManager engineManager;
-	private final ScriptEngine scriptEngine;
-
 	private String name="无折扣";
 	private String description="无折扣";
-	private String script="var total=sale.preDiscountTotal;";
+	private String script="";
 	
 	/**
 	 * 创建的定价策略实例
@@ -32,18 +29,14 @@ public final class PricingStrategyFactory {
 	 * @return
 	 */
 	public ISalePricingStrategy createPricingStrategy() {
-		return new JavascriptDSLPricingStrategy(
-				name,
-				description,
+		return new RuleBasedSalePricingStrategy(
 				script,
-				scriptEngine);
+				name,
+				description);
 		
 	}
 	
 	private PricingStrategyFactory(){
-		//创建engineManager并获取Javascript引擎
-		engineManager=new ScriptEngineManager();
-		scriptEngine=engineManager.getEngineByName("js");	
 	}
 	
 	public static PricingStrategyFactory getInstance() {

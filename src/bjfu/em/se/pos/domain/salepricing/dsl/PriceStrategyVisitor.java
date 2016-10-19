@@ -1,6 +1,5 @@
 // Generated from PriceStrategy.g4 by ANTLR 4.5
 package bjfu.em.se.pos.domain.salepricing.dsl;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**

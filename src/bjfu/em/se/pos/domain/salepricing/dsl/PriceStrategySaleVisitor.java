@@ -2,7 +2,6 @@ package bjfu.em.se.pos.domain.salepricing.dsl;
 
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.misc.Pair;
-import org.antlr.v4.runtime.tree.TerminalNode;
 
 import bjfu.em.se.pos.domain.Sale;
 import bjfu.em.se.pos.domain.salepricing.dsl.PriceStrategyParser.AbsoluteMinusStrategyContext;
